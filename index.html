@@ -3,39 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ظل أثر — ATLAS AtharShadow</title>
+<title>ظل أثر + OMEGA — ATLAS</title>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans+Arabic:wght@600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#07080A;--card:#111316;--line:#1E2228;--text:#E8E8E8;--muted:#8A8F98;--accent:#00FFC2}
+:root{--bg:#07080A;--card:#111316;--line:#1E2228;--text:#E8E8E8;--muted:#8A8F98;--accent:#00FFC2;--accent2:#7C4DFF}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;overflow-x:hidden}
-.mono{font-family:'JetBrains Mono',monospace}
+body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace}
 .top{border-bottom:1px solid var(--line);padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.logo{font-weight:900;letter-spacing:-1px;font-size:22px}
+.logo{font-weight:900;font-size:22px}
 .logo span{color:var(--accent)}
-.live{color:var(--muted);font-size:12px;letter-spacing:1px}
-.lang-switch{display:flex;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px}
-.lang-btn{border:none;background:transparent;color:var(--muted);padding:6px 14px;border-radius:999px;cursor:pointer;font-weight:700;font-family:'JetBrains Mono';transition:0.2s}
-.lang-btn.active{background:var(--text);color:#000}
-.hero{max-width:1100px;margin:0 auto;padding:60px 24px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:24px}
-@media(max-width:900px){.hero{grid-template-columns:1fr;padding:30px 18px}}
-.big{font-family:'Anton','IBM Plex Sans Arabic',sans-serif;font-size:clamp(52px,9vw,110px);line-height:0.9;letter-spacing:-2px;text-transform:uppercase}
-.big.green{color:var(--accent);text-shadow:0 0 24px rgba(0,255,194,0.6)}
-.desc{color:var(--muted);line-height:1.8;margin-top:18px;font-size:14px;max-width:560px}
-.btns{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
-.btn{border-radius:999px;padding:14px 28px;font-weight:700;border:1px solid var(--line);cursor:pointer;text-decoration:none;display:inline-block;transition:0.2s}
-.btn-white{background:var(--text);color:#000}
-.btn-dark{background:var(--card);color:var(--text)}
-.badges{display:flex;gap:10px;margin-top:32px;flex-wrap:wrap}
-.badge{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+.lang-switch{display:flex;gap:6px;background:#111316;border:1px solid #1E2228;border-radius:999px;padding:4px}
+.lang-btn{border:none;background:transparent;color:#8A8F98;padding:6px 14px;border-radius:999px;cursor:pointer;font-weight:700}
+.lang-btn.active{background:#E8E8E8;color:#000}
+.hero{max-width:1100px;margin:0 auto;padding:60px 24px}
+.big{font-family:'Anton','IBM Plex Sans Arabic',sans-serif;font-size:clamp(48px,8vw,100px);line-height:0.9;text-transform:uppercase}
+.green{color:#00FFC2;text-shadow:0 0 24px rgba(0,255,194,0.6)}
+.desc{color:#8A8F98;margin-top:16px;max-width:600px;font-size:14px;line-height:1.8}
+.btn{border-radius:999px;padding:12px 24px;font-weight:700;border:1px solid #1E2228;text-decoration:none;display:inline-block}
+.btn-white{background:#E8E8E8;color:#000}
+.btn-dark{background:#111316;color:#E8E8E8}
+.omega{max-width:1100px;margin:20px auto 60px;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:900px){.omega{grid-template-columns:1fr}}
+.card{background:#111316;border:1px solid #1E2228;border-radius:18px;padding:22px}
+.card h3{font-family:'Anton';font-size:20px;margin-bottom:10px}
+.card p{color:#8A8F98;font-size:13px;line-height:1.7}
 </style>
 </head>
 <body>
-<div class="top mono">
-  <div style="display:flex;gap:18px;align-items:center">
-    <div class="logo"><span>ATLAS_</span>ATHARSHADOW</div>
-    <div class="live" id="live-text">v0.1 • LIVE ON GITHUB PAGES</div>
+<div class="top">
+  <div style="display:flex;gap:14px;align-items:center">
+    <div class="logo"><span>ATLAS_</span>ATHARSHADOW + OMEGA</div>
+    <div>v0.2 LIVE</div>
   </div>
   <div class="lang-switch">
     <button class="lang-btn active" data-lang="ar" onclick="setLang('ar')">AR</button>
@@ -43,59 +41,19 @@ body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospa
   </div>
 </div>
 <div class="hero">
-  <div>
-    <div class="big" id="hero-title">
-      <div>ظل <span class="green">أثر</span></div>
-      <div>اللي الـ LLM</div>
-      <div>يخبيه</div>
-    </div>
-    <div class="desc mono" id="desc-text">
-      ATLAS AtharShadow — إطار أمان و red teaming. يكشف Path Loss و Agreement Loss و Silent Switching. منصة ذاكرة legacy تفضح ما تخفيه النماذج.
-    </div>
-    <div class="btns mono">
-      <a class="btn btn-dark" href="https://github.com/sokrat449-max/atlasatharshadow" target="_blank">→ GitHub</a>
-      <a class="btn btn-white" href="#" id="explore-btn">استكشاف الإطار</a>
-    </div>
-    <div class="badges mono">
-      <div class="badge"><span class="dot"></span> Path Loss Detection</div>
-      <div class="badge"><span class="dot"></span> Agreement Loss</div>
-      <div class="badge"><span class="dot"></span> Silent Switching</div>
-    </div>
-  </div>
+  <div class="big" id="hero"><div>ظل <span class="green">أثر</span></div><div>اللي الـ LLM يخبيه</div></div>
+  <div class="desc" id="desc">ATLAS يكشف ما تخفيه النماذج — و OMEGA يحفظ الأثر للأبد.</div>
+</div>
+<div class="omega">
+  <div class="card"><h3><span style="color:#00FFC2">ATLAS</span> AtharShadow</h3><p id="atlas-p">إطار أمان يكشف Path Loss و Agreement Loss و Silent Switching.</p></div>
+  <div class="card"><h3><span style="color:#7C4DFF">OMEGA</span> Legacy Memory</h3><p id="omega-p">ذاكرة legacy غير قابلة للتعديل تحفظ كل أثر يكشفه ATLAS.</p></div>
 </div>
 <script>
-const T = {
-  ar: {
-    dir: 'rtl',
-    lang: 'ar',
-    live: 'v0.1 • LIVE ON GITHUB PAGES',
-    hero: '<div>ظل <span class="green">أثر</span></div><div>اللي الـ LLM</div><div>يخبيه</div>',
-    desc: 'ATLAS AtharShadow — إطار أمان و red teaming. يكشف Path Loss و Agreement Loss و Silent Switching. منصة ذاكرة legacy تفضح ما تخفيه النماذج.',
-    explore: 'استكشاف الإطار'
-  },
-  en: {
-    dir: 'ltr',
-    lang: 'en',
-    live: 'v0.1 • LIVE ON GITHUB PAGES',
-    hero: '<div>SHADOW</div><div><span class="green">TRACE</span></div><div>THE LLM</div><div>HIDES</div>',
-    desc: 'ATLAS AtharShadow — secure & red teaming framework. Detects Agreement Loss & Path Loss. Silent Switching & Loss detection. Legacy platform exposes what models hide.',
-    explore: 'Explore the Framework'
-  }
+const T={
+ar:{dir:'rtl',lang:'ar',hero:'<div>ظل <span class="green">أثر</span></div><div>اللي الـ LLM يخبيه</div>',desc:'ATLAS يكشف ما تخفيه النماذج — و OMEGA يحفظ الأثر للأبد.',atlas:'إطار أمان يكشف Path Loss و Agreement Loss و Silent Switching.',omega:'ذاكرة legacy غير قابلة للتعديل تحفظ كل أثر يكشفه ATLAS.'},
+en:{dir:'ltr',lang:'en',hero:'<div>SHADOW <span class="green">TRACE</span></div><div>THE LLM HIDES</div>',desc:'ATLAS detects what models hide — OMEGA preserves the trace forever.',atlas:'Secure framework detects Path Loss, Agreement Loss, Silent Switching.',omega:'Immutable legacy vault stores every trace ATLAS finds.'}
 };
-function setLang(l){
-  const t = T[l];
-  document.documentElement.lang = t.lang;
-  document.documentElement.dir = t.dir;
-  document.getElementById('hero-title').innerHTML = t.hero;
-  document.getElementById('desc-text').innerText = t.desc;
-  document.getElementById('explore-btn').innerText = t.explore;
-  document.getElementById('live-text').innerText = t.live;
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelector(`[data-lang="${l}"]`).classList.add('active');
-  localStorage.setItem('atlas_lang', l);
-}
-const saved = localStorage.getItem('atlas_lang');
-if(saved && T[saved]) setLang(saved);
+function setLang(l){const t=T[l];document.documentElement.dir=t.dir;document.documentElement.lang=t.lang;document.getElementById('hero').innerHTML=t.hero;document.getElementById('desc').innerText=t.desc;document.getElementById('atlas-p').innerText=t.atlas;document.getElementById('omega-p').innerText=t.omega;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`[data-lang="${l}"]`).classList.add('active');}
 </script>
 </body>
 </html>
