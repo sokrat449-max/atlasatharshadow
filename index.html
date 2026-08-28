@@ -3,57 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ظل أثر + OMEGA — ATLAS</title>
+<title>ظل أثر + OMEGA — ATLAS v0.3</title>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans+Arabic:wght@600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#07080A;--card:#111316;--line:#1E2228;--text:#E8E8E8;--muted:#8A8F98;--accent:#00FFC2;--accent2:#7C4DFF}
+:root{--bg:#05070A;--card:#101216;--line:#1E232B;--text:#EDEEF0;--muted:#8B919A;--accent:#00FFC2;--accent2:#7C4DFF;--gold:#FFD86A}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace}
-.top{border-bottom:1px solid var(--line);padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.logo{font-weight:900;font-size:22px}
+body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;overflow-x:hidden}
+.top{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(5,7,10,0.9);backdrop-filter:blur(12px);padding:12px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-weight:900;letter-spacing:0.02em}
 .logo span{color:var(--accent)}
-.lang-switch{display:flex;gap:6px;background:#111316;border:1px solid #1E2228;border-radius:999px;padding:4px}
-.lang-btn{border:none;background:transparent;color:#8A8F98;padding:6px 14px;border-radius:999px;cursor:pointer;font-weight:700}
+.live{font-size:11px;color:#00FFC2;border:1px solid #00FFC2;padding:3px 8px;border-radius:999px}
+.lang-switch{display:flex;gap:5px;background:#111316;border:1px solid var(--line);border-radius:999px;padding:4px}
+.lang-btn{border:none;background:transparent;color:#8A8F98;padding:6px 14px;border-radius:999px;cursor:pointer;font-weight:700;font-size:13px}
 .lang-btn.active{background:#E8E8E8;color:#000}
-.hero{max-width:1100px;margin:0 auto;padding:60px 24px}
-.big{font-family:'Anton','IBM Plex Sans Arabic',sans-serif;font-size:clamp(48px,8vw,100px);line-height:0.9;text-transform:uppercase}
-.green{color:#00FFC2;text-shadow:0 0 24px rgba(0,255,194,0.6)}
-.desc{color:#8A8F98;margin-top:16px;max-width:600px;font-size:14px;line-height:1.8}
-.btn{border-radius:999px;padding:12px 24px;font-weight:700;border:1px solid #1E2228;text-decoration:none;display:inline-block}
+.hero{position:relative;max-width:1200px;margin:0 auto;padding:0 24px}
+.cover{position:relative;height:68vh;min-height:520px;border-radius:24px;overflow:hidden;border:1px solid var(--line);margin-top:18px;background:radial-gradient(120% 120% at 20% 10%, #1a2a3a 0%, #0a0f18 40%, #05070A 80%)}
+.cover::before{content:"";position:absolute;inset:0;background:
+ linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(5,7,10,0.7) 75%),
+ url('https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?q=80&w=2070');
+background-size:cover;background-position:center 35%;filter:saturate(1.1) contrast(1.05)}
+.cover::after{content:"";position:absolute;bottom:0;left:0;right:0;height:55%;background:linear-gradient(0deg, var(--bg) 0%, transparent 100%)}
+.pyramids{position:absolute;bottom:18%;left:50%;transform:translateX(-50%);width:86%;height:38%;display:flex;align-items:end;justify-content:center;gap:2%;z-index:2;opacity:0.95}
+.tri{width:0;height:0;border-left:110px solid transparent;border-right:110px solid transparent;border-bottom:180px solid #111a26;position:relative;filter:drop-shadow(0 0 18px rgba(0,255,194,0.15))}
+.tri::after{content:"";position:absolute;left:-110px;top:0;width:0;height:0;border-left:110px solid transparent;border-right:70px solid transparent;border-bottom:180px solid #0e1620;transform:skewX(-6deg);opacity:0.8}
+.tri.small{border-left-width:75px;border-right-width:75px;border-bottom-width:120px;margin-bottom:10px;opacity:0.9}
+.nile{position:absolute;bottom:0;left:0;right:0;height:22%;background:linear-gradient(90deg, #0a2a3a, #0e3a4a, #0a2a3a);opacity:0.6;z-index:1}
+.nile::before{content:"";position:absolute;top:-18px;left:0;right:0;height:18px;background:linear-gradient(90deg, transparent, var(--accent), transparent);opacity:0.5;filter:blur(1px)}
+.hero-text{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;padding:40px}
+.big{font-family:'Anton','IBM Plex Sans Arabic',sans-serif;font-size:clamp(42px,7.5vw,92px);line-height:0.9;text-transform:uppercase;text-shadow:0 8px 32px rgba(0,0,0,0.8)}
+.green{color:var(--accent);text-shadow:0 0 28px rgba(0,255,194,0.7)}
+.gold{color:var(--gold)}
+.desc{color:#B8BEC7;margin-top:18px;max-width:620px;font-size:14.5px;line-height:1.9;background:rgba(5,7,10,0.55);backdrop-filter:blur(6px);padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.06)}
+.actions{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{border-radius:999px;padding:12px 22px;font-weight:800;border:1px solid var(--line);text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-size:13px;transition:0.2s}
 .btn-white{background:#E8E8E8;color:#000}
-.btn-dark{background:#111316;color:#E8E8E8}
-.omega{max-width:1100px;margin:20px auto 60px;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:900px){.omega{grid-template-columns:1fr}}
-.card{background:#111316;border:1px solid #1E2228;border-radius:18px;padding:22px}
-.card h3{font-family:'Anton';font-size:20px;margin-bottom:10px}
-.card p{color:#8A8F98;font-size:13px;line-height:1.7}
+.btn-white:hover{background:#fff;transform:translateY(-1px)}
+.btn-ghost{background:rgba(16,18,22,0.8);color:var(--text);backdrop-filter:blur(8px)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.omega{max-width:1200px;margin:28px auto 70px;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:900px){.omega{grid-template-columns:1fr}.cover{height:62vh}.pyramids{display:none}}
+.card{background:linear-gradient(180deg, #12151b, #0f1216);border:1px solid var(--line);border-radius:20px;padding:22px;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg, transparent, var(--accent), transparent);opacity:0.6}
+.card h3{font-family:'Anton';font-size:22px;margin-bottom:10px;letter-spacing:0.02em}
+.card p{color:var(--muted);font-size:13.5px;line-height:1.8}
+.badge{font-size:10px;letter-spacing:0.12em;color:var(--muted);margin-bottom:8px}
+.deploy{margin-top:14px;font-size:11px;color:var(--accent);opacity:0.9}
+.codeblock{margin-top:14px;background:#0a0e13;border:1px solid #1a242e;border-radius:12px;padding:14px;font-size:11.5px;line-height:1.7;color:#7dd8c2}
 </style>
 </head>
 <body>
 <div class="top">
-  <div style="display:flex;gap:14px;align-items:center">
+  <div style="display:flex;gap:12px;align-items:center">
     <div class="logo"><span>ATLAS_</span>ATHARSHADOW + OMEGA</div>
-    <div>v0.2 LIVE</div>
+    <div class="live">v0.3 LIVE • PYRAMIDS + NILE</div>
   </div>
   <div class="lang-switch">
     <button class="lang-btn active" data-lang="ar" onclick="setLang('ar')">AR</button>
     <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
   </div>
 </div>
+
 <div class="hero">
-  <div class="big" id="hero"><div>ظل <span class="green">أثر</span></div><div>اللي الـ LLM يخبيه</div></div>
-  <div class="desc" id="desc">ATLAS يكشف ما تخفيه النماذج — و OMEGA يحفظ الأثر للأبد.</div>
+  <div class="cover">
+    <div class="pyramids">
+      <div class="tri small"></div>
+      <div class="tri"></div>
+      <div class="tri small" style="margin-bottom:22px"></div>
+    </div>
+    <div class="nile"></div>
+    <div class="hero-text">
+      <div class="big" id="hero"><div>ظل <span class="green">أثر</span></div><div>اللي الـ <span class="gold">LLM</span> يخبيه</div></div>
+      <div class="desc" id="desc">ATLAS يكشف ما تخفيه النماذج — و OMEGA يحفظ الأثر للأبد. قلعة مصر • أهرامات • نيل — ترافيك عالي بذكاء.</div>
+      <div class="actions">
+        <a class="btn btn-white" href="https://github.com/sokrat449-max/atlasatharshadow">GitHub →</a>
+        <a class="btn btn-ghost" href="https://sokrat449-max.github.io/omega-origin/">OMEGA Origin 🔺</a>
+      </div>
+    </div>
+  </div>
 </div>
+
 <div class="omega">
-  <div class="card"><h3><span style="color:#00FFC2">ATLAS</span> AtharShadow</h3><p id="atlas-p">إطار أمان يكشف Path Loss و Agreement Loss و Silent Switching.</p></div>
-  <div class="card"><h3><span style="color:#7C4DFF">OMEGA</span> Legacy Memory</h3><p id="omega-p">ذاكرة legacy غير قابلة للتعديل تحفظ كل أثر يكشفه ATLAS.</p></div>
+  <div class="card">
+    <div class="badge">SECURITY LAYER</div>
+    <h3><span style="color:var(--accent)">ATLAS</span> AtharShadow</h3>
+    <p id="atlas-p">إطار أمان يكشف Path Loss و Agreement Loss و Silent Switching. يكشف الطبقات المخفية في الـ LLM قبل ما تتحول لأثر سام.</p>
+    <div class="codeblock">> initializing atlasatharshadow...<br>> memory_legacy: ONLINE<br>> path_loss_monitor: ACTIVE<br>> agreement_check: ACTIVE<br>> silent_switch: DETECTED [3]<br>> fortress_egypt: PYRAMIDS+NILE ✓</div>
+    <div class="deploy">sokrat449-max.github.io/atlasatharshadow ✓ • atharshadow.is-a.dev ✓</div>
+  </div>
+  <div class="card">
+    <div class="badge">LEGACY MEMORY</div>
+    <h3><span style="color:var(--accent2)">OMEGA</span> Legacy Memory</h3>
+    <p id="omega-p">ذاكرة legacy غير قابلة للتعديل تحفظ كل أثر يكشفه ATLAS. قلعة مصر الرقمية — ما يتحفظش يتمسحش.</p>
+    <div class="codeblock">> OMEGA singularity: IGNITED<br>> invariants: 14 laws<br>> fitness: 0.00 → EVOLVED<br>> legacy_chain: IMMUTABLE ✓</div>
+    <div class="deploy">OMEGA ORIGIN • fortress + pyramids</div>
+  </div>
 </div>
+
 <script>
-const T={
-ar:{dir:'rtl',lang:'ar',hero:'<div>ظل <span class="green">أثر</span></div><div>اللي الـ LLM يخبيه</div>',desc:'ATLAS يكشف ما تخفيه النماذج — و OMEGA يحفظ الأثر للأبد.',atlas:'إطار أمان يكشف Path Loss و Agreement Loss و Silent Switching.',omega:'ذاكرة legacy غير قابلة للتعديل تحفظ كل أثر يكشفه ATLAS.'},
-en:{dir:'ltr',lang:'en',hero:'<div>SHADOW <span class="green">TRACE</span></div><div>THE LLM HIDES</div>',desc:'ATLAS detects what models hide — OMEGA preserves the trace forever.',atlas:'Secure framework detects Path Loss, Agreement Loss, Silent Switching.',omega:'Immutable legacy vault stores every trace ATLAS finds.'}
-};
-function setLang(l){const t=T[l];document.documentElement.dir=t.dir;document.documentElement.lang=t.lang;document.getElementById('hero').innerHTML=t.hero;document.getElementById('desc').innerText=t.desc;document.getElementById('atlas-p').innerText=t.atlas;document.getElementById('omega-p').innerText=t.omega;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`[data-lang="${l}"]`).classList.add('active');}
+function setLang(l){
+ document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
+ if(l==='en'){
+  document.documentElement.dir='ltr';
+  document.getElementById('hero').innerHTML='<div>Shadow of <span class="green">ATHAR</span></div><div>What LLM Hides</div>';
+  document.getElementById('desc').innerText='ATLAS exposes what models hide — and OMEGA preserves the legacy forever. Egypt fortress • pyramids • Nile.';
+  document.getElementById('atlas-p').innerText='Security layer that detects Path Loss, Agreement Loss and Silent Switching before it becomes toxic legacy.';
+  document.getElementById('omega-p').innerText='Immutable legacy memory that preserves every trace ATLAS exposes. Egypt digital fortress.';
+ } else {
+  document.documentElement.dir='rtl';
+  document.getElementById('hero').innerHTML='<div>ظل <span class="green">أثر</span></div><div>اللي الـ <span class="gold">LLM</span> يخبيه</div>';
+  document.getElementById('desc').innerText='ATLAS يكشف ما تخفيه النماذج — و OMEGA يحفظ الأثر للأبد. قلعة مصر • أهرامات • نيل — ترافيك عالي بذكاء.';
+  document.getElementById('atlas-p').innerText='إطار أمان يكشف Path Loss و Agreement Loss و Silent Switching. يكشف الطبقات المخفية في الـ LLM قبل ما تتحول لأثر سام.';
+  document.getElementById('omega-p').innerText='ذاكرة legacy غير قابلة للتعديل تحفظ كل أثر يكشفه ATLAS. قلعة مصر الرقمية — ما يتحفظش يتمسحش.';
+ }
+}
 </script>
 </body>
 </html>
